@@ -26,7 +26,7 @@
             (val) => (val && val.length > 0) || 'Please enter your username',
             (val) => val.length > 3 || 'Minimum username length is 3 characters',
           ]"
-          lazy-rules
+          lazy-rules="ondemand"
           dense
           outlined
         >
@@ -46,7 +46,7 @@
             (val) => val.length > 5 || 'Minimum password length is 6 characters',
           ]"
           :type="isPwd ? 'password' : 'text'"
-          lazy-rules
+          lazy-rules="ondemand"
           dense
           outlined
         >
