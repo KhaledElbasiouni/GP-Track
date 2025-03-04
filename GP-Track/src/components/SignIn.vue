@@ -1,11 +1,19 @@
 <template>
   <main class="row no-wrap justify-center items-center" style="height: 100vh">
-    <div class="card justify-center">
+    <div class="card column no-wrap">
+      <div
+        class="row no-wrap justify-center items-center col-grow q-mt-lg"
+        style="gap: 10px"
+      >
+        <Dumbbell :size="40" :stroke-width="1.5" />
+        <span class="appTitle">GP-Track</span>
+      </div>
+      <div class="self-center" style="font-size: 2rem; font-weight: 600">Welcome</div>
       <q-form
         @submit=""
         action="#"
         method="post"
-        class="q-gutter-y-sm column no-wrap full-height justify-center items-center"
+        class="column no-wrap full-height justify-center items-center"
         style="gap: 20px"
       >
         <q-input
@@ -70,6 +78,11 @@
 </template>
 
 <style scoped>
+.appTitle {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
 .signInBtn {
   background-color: rgba(0, 0, 0, 0.05);
 }
