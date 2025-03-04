@@ -1,38 +1,44 @@
 <template>
-  <header>
-    <div id="headerContainer">
+  <header
+    class="row justify-between q-pa-sm"
+    style="border-bottom: solid 2px rgba(0, 0, 0, 0.25)"
+  >
+    <div class="row gap items-center">
       <Dumbbell :size="40" :stroke-width="1.5" />
       <span id="appTitle">GP-Track</span>
-      <span id="headerButtonGroup">
-        <Settings class="icon" :size="modeSize" :stroke-width="1.5" />
-        <Sun
-          v-if="!lightMode"
-          class="icon"
-          :size="modeSize"
-          :stroke-width="1.5"
-          @click="toggleLightMode"
-        />
-        <Moon
-          v-if="lightMode"
-          class="icon"
-          :size="modeSize"
-          :stroke-width="1.5"
-          @click="toggleLightMode"
-        />
-        <Button label="Sign In" size="large" />
-      </span>
     </div>
+    <span id="headerButtonGroup">
+      <Settings class="icon" :size="modeSize" :stroke-width="1.5" />
+      <Sun
+        v-if="!lightMode"
+        class="icon"
+        :size="modeSize"
+        :stroke-width="1.5"
+        @click="toggleLightMode"
+      />
+      <Moon
+        v-if="lightMode"
+        class="icon"
+        :size="modeSize"
+        :stroke-width="1.5"
+        @click="toggleLightMode"
+      />
+      <q-btn
+        class="signOutBtn"
+        label="Sign Out"
+        color="primary"
+        padding="xs sm"
+        unelevated
+        no-caps
+      />
+    </span>
   </header>
 </template>
 
 <style scoped>
 #headerContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: #ffffff;
   border-bottom: solid rgba(234, 225, 225, 0.8) 1px;
-
   padding: 0 5%;
 }
 

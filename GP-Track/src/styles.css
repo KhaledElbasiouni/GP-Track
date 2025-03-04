@@ -19,6 +19,6 @@ html body {
   background-color: var(--background-col);
 }
 
-body {
-  height: 100vh;
+.gap {
+  gap: 1rem;
 }

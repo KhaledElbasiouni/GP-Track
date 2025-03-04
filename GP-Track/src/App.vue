@@ -1,7 +1,9 @@
 <template>
-  <!-- <Header></Header> -->
-  <SignIn></SignIn>
-  <!-- <SignUp></SignUp> -->
+  <div class="column no-wrap items-stretch" style="min-height: 100dvh">
+    <Header></Header>
+    <SignIn class="col-grow"></SignIn>
+    <!-- <SignUp></SignUp> -->
+  </div>
 </template>
 
 <style scoped></style>

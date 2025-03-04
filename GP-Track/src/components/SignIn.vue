@@ -1,5 +1,5 @@
 <template>
-  <main class="row no-wrap justify-center items-center" style="height: 100vh">
+  <main class="row no-wrap justify-center items-center full-height">
     <div class="card column no-wrap">
       <div
         class="row no-wrap justify-center items-center col-grow q-mt-lg"
@@ -63,13 +63,11 @@
         </q-input>
 
         <q-btn
-          class="signInBtn"
           label="Sign In"
           type="submit"
           color="primary"
           padding="xs sm"
-          flat
-          dense
+          unelevated
           no-caps
         />
       </q-form>
@@ -92,8 +90,8 @@
 }
 
 .card {
-  width: 40rem;
-  height: 35rem;
+  width: 45rem;
+  height: 40rem;
   border: solid rgba(234, 225, 225, 0.8) 1px;
   border-radius: 8px;
 }
