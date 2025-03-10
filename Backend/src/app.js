@@ -76,8 +76,37 @@ app.post("/sign-in", async (req, res) => {
 app.post("/sign-up", async (req, res) => {
   const { username, password } = req.body;
 
-  const hashedPassword = await bcrypt.hash(password, 10);
-  await DB.insertUser(username, hashedPassword);
+  try {
+    if (!username || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Username and password are required",
+      });
+    }
+
+    const existingUser = await DB.getUserWithUsername(username);
+    if (existingUser) {
+      return res.status(409).json({
+        success: false,
+        message: "Username already exists",
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    await DB.insertUser(username, hashedPassword);
+
+    return res.status(201).json({
+      success: true,
+      message: "User created successfully",
+    });
+  } catch (err) {
+    console.error("Signup error:", err);
+    return res.status(500).json({
+      success: false,
+      message: "An error occurred while signing up",
+    });
+  }
 });
 
 if (process.env.NODE_ENV === "production") {

@@ -11,8 +11,6 @@
       <div class="self-center" style="font-size: 2rem; font-weight: 600">Welcome</div>
       <q-form
         @submit=""
-        action="#"
-        method="post"
         class="column no-wrap full-height justify-center items-center"
         style="gap: 20px"
       >
@@ -101,7 +99,7 @@
 }
 </style>
 <script setup lang="ts">
-import { Dumbbell, Lock, User } from "lucide-vue-next";
+import { Dumbbell } from "lucide-vue-next";
 import { QBtn, QForm, QIcon } from "quasar";
 
 import { ref, type Ref } from "vue";
