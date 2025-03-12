@@ -1,9 +1,9 @@
-import { createApp } from "vue";
+import { createApp, provide } from "vue";
 import { createPinia } from "pinia";
-
 import { Quasar } from "quasar";
-
 import App from "./App.vue";
+import axios from "axios";
+import { DI_KEYS } from "@/di-keys";
 
 // Import icon libraries
 import "@quasar/extras/roboto-font/roboto-font.css";
@@ -24,5 +24,7 @@ app.use(createPinia());
 app.use(Quasar, {
   plugins: {}, // import Quasar plugins and add here
 });
+
+app.provide(DI_KEYS.HttpClient, axios);
 
 app.mount("#app");

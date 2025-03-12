@@ -10,7 +10,7 @@
       </div>
       <div class="self-center" style="font-size: 2rem; font-weight: 600">Welcome</div>
       <q-form
-        @submit=""
+        @submit="submitSignIn"
         class="column no-wrap full-height justify-center items-center"
         style="gap: 20px"
       >
@@ -68,6 +68,15 @@
           unelevated
           no-caps
         />
+        <q-btn
+          @click=""
+          label="Create a new account"
+          color="secondary"
+          text-color="primary"
+          padding="xs sm"
+          unelevated
+          no-caps
+        />
       </q-form>
     </div>
   </main>
@@ -101,11 +110,32 @@
 <script setup lang="ts">
 import { Dumbbell } from "lucide-vue-next";
 import { QBtn, QForm, QIcon } from "quasar";
+import { ref, inject, type Ref } from "vue";
+import { DI_KEYS } from "@/di-keys.ts";
+import type { UserCredentials } from "@/types/types.ts";
 
-import { ref, type Ref } from "vue";
+const http = inject<HttpClient>(DI_KEYS.HttpClient) as HttpClient;
 
 const username: Ref<string> = ref("");
 const password: Ref<string> = ref("");
 
 const isPwd: Ref<boolean> = ref(true);
+
+async function submitSignIn() {
+  const payload: UserCredentials = {
+    username: username.value,
+    password: password.value,
+  };
+
+  try {
+    const { data } = await http?.post("/api/sign-in", payload, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
 </script>

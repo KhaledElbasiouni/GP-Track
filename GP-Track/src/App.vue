@@ -1,6 +1,6 @@
 <template>
   <div class="column no-wrap items-stretch" style="min-height: 100dvh">
-    <Header></Header>
+    <!-- <HeaderComponent></HeaderComponent> -->
     <SignIn class="col-grow"></SignIn>
     <!-- <SignUp></SignUp> -->
   </div>
@@ -9,7 +9,7 @@
 <style scoped></style>
 
 <script setup lang="ts">
-import Header from "./components/Header.vue";
-import SignIn from "./components/SignIn.vue";
-import SignUp from "./components/SignUp.vue";
+import HeaderComponent from "@@/TheHeader.vue";
+import SignIn from "@@/SignIn.vue";
+import SignUp from "@@/SignUp.vue";
 </script>
