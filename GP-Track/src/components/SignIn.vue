@@ -29,7 +29,7 @@
           outlined
         >
           <template v-slot:prepend>
-            <q-icon name="o_person" />
+            <q-icon name="sym_o_person" />
           </template>
         </q-input>
 
@@ -49,7 +49,7 @@
           outlined
         >
           <template v-slot:prepend>
-            <q-icon name="o_lock" />
+            <q-icon name="sym_o_lock" />
           </template>
           <template v-slot:append>
             <q-icon
@@ -128,7 +128,7 @@ async function submitSignIn() {
   };
 
   try {
-    const { data } = await http?.post("/api/sign-in", payload, {
+    const { data } = await http.post("/api/sign-in", payload, {
       headers: {
         "Content-Type": "application/json",
       },

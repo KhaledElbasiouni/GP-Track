@@ -1,7 +1,8 @@
-$primary: "#000";
+$primary: var(--primary);
 
-$secondary:"#EFEFEF";
-// $accent: ""
+$secondary:var(--secondary);
+$accent: var(--accent) // Indigo
+// $accent: "#893BFF" // Aztec Purple
 
 
 

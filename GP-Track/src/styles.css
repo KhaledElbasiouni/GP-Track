@@ -1,3 +1,13 @@
+:root {
+  --primary: #000;
+  --secondary: #efefef;
+
+  /* Indigo */
+  --accent: #4b0082;
+  /* Aztec Purple */
+  /* --accent: #893BFF; */
+}
+
 *,
 *::before,
 *::after {
@@ -21,4 +31,16 @@ html body {
 
 .gap {
   gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.text-decoration-none {
+  text-decoration: none;
 }

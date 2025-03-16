@@ -7,14 +7,15 @@ import { DI_KEYS } from "@/di-keys";
 
 // Import icon libraries
 import "@quasar/extras/roboto-font/roboto-font.css";
-import "@quasar/extras/material-icons/material-icons.css";
-import "@quasar/extras/material-icons-outlined/material-icons-outlined.css";
+import "@quasar/extras/material-symbols-outlined/material-symbols-outlined.css";
+import "@quasar/extras/material-symbols-rounded/material-symbols-rounded.css";
 
 // A few examples for animations from Animate.css:
 // import @quasar/extras/animate/fadeIn.css
 // import @quasar/extras/animate/fadeOut.css
 
 // Import Quasar css
+import "./styles.css";
 import "quasar/src/css/index.sass";
 
 const app = createApp(App);
