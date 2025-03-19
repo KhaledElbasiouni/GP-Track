@@ -1,43 +1,14 @@
 <template>
   <main class="dashboard">
-    <div class="sidebar">
-      <div class="row no-wrap justify-center items-center q-mt-lg" style="gap: 10px">
-        <Dumbbell :size="40" :stroke-width="1.5" />
-        <span class="appTitle">GP-Track</span>
-      </div>
-
-      <ul class="q-mt-xl q-px-sm | list-style-none">
-        <template v-for="(item, index) in sidebarItems" :key="item.name">
-          <li
-            class="cursor-pointer q-px-sm q-py-xs q-mt-sm"
-            style="font-weight: 500"
-            @click="setActiveLink(index)"
-          >
-            <a
-              class="row items-center | gap text-decoration-none"
-              :class="{ activeLink: activeLinkIndex === index }"
-              style="font-size: 1.75rem"
-            >
-              <q-icon
-                :name="item.icon"
-                size="2.5rem"
-                style="flex-shrink: 0; font-weight: 600"
-              />
-
-              <span>{{ item.text }}</span>
-            </a>
-          </li>
-        </template>
-      </ul>
-    </div>
+    <Sidebar />
     <div class="content">
       <div class="chart"></div>
       <hr />
       <div class="routinesContainer">
-        <div class="routine"></div>
-        <div class="routine"></div>
-        <div class="routine"></div>
-        <div class="routine"></div>
+        <RoutineCard name="Push/Pull/Legs" :num-days="5" :description />
+        <RoutineCard name="Push/Pull/Legs" :num-days="5" :description />
+        <RoutineCard name="Push/Pull/Legs" :num-days="5" :description />
+        <RoutineCard name="Push/Pull/Legs" :num-days="5" :description />
       </div>
     </div>
   </main>
@@ -97,32 +68,11 @@
 </style>
 
 <script setup lang="ts">
-import { Dumbbell } from "lucide-vue-next";
 import { ref, type Ref } from "vue";
+import RoutineCard from "./RoutineCard.vue";
+import Sidebar from "./Sidebar.vue";
 
-type sidebarItem = {
-  icon: string;
-  text: string;
-};
-
-const sidebarItems: Ref<Array<sidebarItem>> = ref([
-  {
-    icon: "sym_r_home",
-    text: "Home",
-  },
-  {
-    icon: "sym_r_exercise",
-    text: "Exercise",
-  },
-  {
-    icon: "sym_r_settings",
-    text: "Settings",
-  },
-]);
-
-const activeLinkIndex: Ref<number> = ref(0);
-
-function setActiveLink(index: number): void {
-  activeLinkIndex.value = index;
-}
+const description: Ref<string> = ref(
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur nemo, ipsa Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur nemo, ipsa"
+);
 </script>
